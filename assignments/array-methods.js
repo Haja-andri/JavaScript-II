@@ -59,21 +59,21 @@ let fullName = [];
 runners.forEach(runner =>{
     fullName.push({'first_name': runner.first_name, 'last_name': runner.last_name});
 });
-//console.log(fullName);
+console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = fullName.map(runner =>{
     return{'first_name': runner.first_name.toUpperCase(), 'last_name': runner.last_name}
 });
-//console.log(allCaps); 
+console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = runners.filter(runner =>{
     return runner.shirt_size == 'L';
 });
-//console.log(largeShirts);
+console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
@@ -86,7 +86,24 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The director whant to identify the sponsors that contributed for more then 150$ to send them a special thank you e-card
+let topDonnator = runners.filter(runner =>{
+    return runner.donation > 150;
+});
+console.log(topDonnator);
 
 // Problem 2
+// to send the e-cards to the top donators he then needs their First Name (to greet) and email address
+let contactInfo = topDonnator.map(donnator =>{
+    return {'first_name': donnator.first_name, 'email': donnator.email}
+});
+console.log(contactInfo);
 
 // Problem 3
+// To keep track of donnation history for each company he wants to he will add the date stamp to each runner
+let runnersWithDate = [];
+runners.forEach(runner =>{
+    runner.donnation_Date = 'May 2019';
+    runnersWithDate.push(runner);
+});
+console.log(runnersWithDate);
