@@ -22,29 +22,70 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     console.log(first)
   });
 
+  // Haja notes : the Function invocation above is equivalent to the following code
+
+    function firstItem(arr, cb) {
+      return function(first) {
+      console.log(arr[0])
+      }
+    }
+
+
 */
 
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+// Invocation
+getLength(items, function(theLength) {
+  console.log(theLength);
+});
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
+// Invocation
+last(items, function(lastItem) {
+  console.log(lastItem);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+//Invocation
+sumNums (4, 12, function(theSum){
+  console.log(theSum)
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+//Invocation
+multiplyNums (4, 12, function(multiplied){
+  console.log(multiplied)
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  isElementPresent = false;
+  list.forEach(element => {
+    if(element == item){
+      isElementPresent = true;
+    }
+  });
+  return cb(isElementPresent);
 }
+// Invocation
+contains('Notebook', items, function(isItTrue){
+  console.log(isItTrue);
+});
 
 /* STRETCH PROBLEM */
 
