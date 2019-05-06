@@ -40,7 +40,7 @@ function getLength(arr, cb) {
 }
 // Invocation
 getLength(items, function(theLength) {
-  //console.log(theLength);
+  console.log(theLength);
 });
 
 
@@ -50,7 +50,7 @@ function last(arr, cb) {
 }
 // Invocation
 last(items, function(lastItem) {
-  //console.log(lastItem);
+  console.log(lastItem);
 });
 
 function sumNums(x, y, cb) {
@@ -59,7 +59,7 @@ function sumNums(x, y, cb) {
 }
 //Invocation
 sumNums (4, 12, function(theSum){
-  //console.log(theSum)
+  console.log(theSum)
 });
 
 function multiplyNums(x, y, cb) {
@@ -68,7 +68,7 @@ function multiplyNums(x, y, cb) {
 }
 //Invocation
 multiplyNums (4, 12, function(multiplied){
-  //console.log(multiplied)
+  console.log(multiplied)
 });
 
 function contains(item, list, cb) {
